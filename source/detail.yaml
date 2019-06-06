@@ -1,0 +1,36 @@
+开始体验:
+  类型: id
+  参数: cn.carhouse.yctone:id/iv_guide_main
+环境:
+  类型: android_uiautomator
+  参数: 测试(dev)
+我:
+  类型: android_uiautomator
+  参数: 我
+  设置:
+    类型: id
+    参数: cn.carhouse.yctone:id/iv_set
+  退出登录:
+    类型: android_uiautomator
+    参数: 退出登录
+  用户名:
+    类型: id
+    参数: cn.carhouse.yctone:id/tv_user_name
+  我的评价:
+    类型: xpath
+    参数: //android.support.v7.widget.RecyclerView[@resource-id="cn.carhouse.yctone:id/recycler_view_five"]/android.widget.LinearLayout[10]/android.widget.ImageView
+  请登录账户:
+    类型: id
+    参数: cn.carhouse.yctone:id/tv_login_out
+  手机登录:
+    类型: id
+    参数: cn.carhouse.yctone:id/ll_login
+  请输入手机号:
+    类型: android_uiautomator
+    参数: 请输入手机号
+  请输入密码:
+    类型: xpath
+    参数: //android.widget.LinearLayout[@resource-id="cn.carhouse.yctone:id/ll_container"]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.EditText
+  登录:
+    类型: id
+    参数: cn.carhouse.yctone:id/tv_next

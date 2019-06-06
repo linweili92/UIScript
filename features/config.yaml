@@ -1,0 +1,12 @@
+appium_url: 127.0.0.1:4723
+apps: D:\\PycharmProjects\\UIScript\\apps\\B_520_2.8.6_test01.apk
+automationName: Uiautomator2
+platformName: Android
+platformVersion: 5.1.1
+deviceName: 127.0.0.1:62001
+appPackage: cn.carhouse.yctone
+appActivity: .activity.welcome.GuideActivity
+noReset: False
+uname: 18229365263
+pwd: 123456
+stf: False
