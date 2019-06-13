@@ -17,6 +17,11 @@ def start_app(self):
     self.driver.wait_activity('.activity.welcome.GuideActivity', 5)
     swipLeft(self.driver, n=3)
     clickElement(self.driver, '开始体验')
+    clickElement(self.driver, '以后再说')
+    # el1 = self.driver.find_element_by_id("cn.carhouse.yctone:id/no")
+    #
+    # if el1 is not None:
+    #     el1.click()
 
 
 @then('重新启动APP')
@@ -51,11 +56,13 @@ def is_login(self):
             clickElement(self.driver, '我', '请登录账户')
             clickElement(self.driver, '我', '手机登录')
             send_keys(self.driver, '我', '请输入手机号', gl.get_value('uname'))
-            send_keys(self.driver, '我', '请输入手机号', gl.get_value('pwd'))
+            send_keys(self.driver, '我', '请输入密码', gl.get_value('pwd'))
             clickElement(self.driver, '我', '登录')
             if finElement(self.driver, '我', '用户名') is not None:
                 gl.set_value('login', True)
                 print('用户登录成功')
+            else:
+                print('登录失败')
     else:
         gl.set_value('login', True)
         print('用户已登录')
@@ -82,15 +89,18 @@ def select_env(self, env):
 def find_element(self, page, element):
     finElement(self.driver, page, element)
 
+@then('只点击{page}')
+def click_page_without_element(self, page):
+    clickElement(self.driver, page)
 
 @then('点击{page}|{element}')
-def to_login(self, page, element):
+def click_page(self, page, element):
     clickElement(self.driver, page, element)
 
 
 @when('在{page}|{element}处键入{keys}')
 def send_keys(self, page, element, keys):
-    el = finElement(self.driver, page, element)
+    el = finElement(self, page, element)
     if el is not None:
         el.clear()
         el.send_keys(keys)
@@ -106,3 +116,9 @@ def valid_text(self, page, element=None):
 def sign_log(self, info):
     gl.set_value('login', True)
     print('标记' + info)
+
+
+import time
+@then('sleep{mn}秒')
+def sleep_m(self, mn=2):
+    time.sleep(int(mn))

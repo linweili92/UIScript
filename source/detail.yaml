@@ -1,9 +1,29 @@
 开始体验:
   类型: id
   参数: cn.carhouse.yctone:id/iv_guide_main
+以后再说:
+  类型: id
+  参数: cn.carhouse.yctone:id/no
 环境:
   类型: android_uiautomator
   参数: 测试(dev)
+首页:
+  类型: android_uiautomator
+  参数: 刷新
+  小屋自营精选:
+    类型: xpath
+    参数: //android.view.View[@resource-id="cn.carhouse.yctone:id/refresh_layout"]/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.widget.FrameLayout/android.widget.ImageView
+小屋自营精选:
+  澳德巴克斯:
+    类型: id
+    参数: cn.carhouse.yctone:id/part_image
+澳德巴克斯:
+  立即购买:
+    类型: xpath
+    参数: //android.support.v7.widget.RecyclerView[@resource-id="cn.carhouse.yctone:id/recycler_view"]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.Button
+添加商品:
+  类型: id
+  参数: cn.carhouse.yctone:id/id_ckb_add
 我:
   类型: android_uiautomator
   参数: 我
