@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
 @when('启动APP')
 def start_app(self):
-    self.driver.wait_activity('.activity.welcome.GuideActivity', 5)
+    self.driver.wait_activity('.activity.welcome.SplashActivity', 5)
     swipLeft(self.driver, n=3)
     clickElement(self.driver, '开始体验')
     clickElement(self.driver, '以后再说')
@@ -55,8 +55,8 @@ def is_login(self):
         if finElement(self.driver, '我', '请登录账户') is not None:
             clickElement(self.driver, '我', '请登录账户')
             clickElement(self.driver, '我', '手机登录')
-            send_keys(self.driver, '我', '请输入手机号', gl.get_value('uname'))
-            send_keys(self.driver, '我', '请输入密码', gl.get_value('pwd'))
+            send_keys(self, '我', '请输入手机号', gl.get_value('uname'))
+            send_keys(self, '我', '请输入密码', gl.get_value('pwd'))
             clickElement(self.driver, '我', '登录')
             if finElement(self.driver, '我', '用户名') is not None:
                 gl.set_value('login', True)
@@ -70,11 +70,13 @@ def is_login(self):
 
 @given('点击底部的我')
 def click_me(self):
+    time.sleep(3)
     clickElement(self.driver, '我')
 
 
 @when('选择{env}环境')
 def select_env(self, env):
+    time.sleep(3)
     clickElement(self.driver, '我', '我的评价')
     if env == '测试':
         env_str = '测试(dev)'
@@ -87,20 +89,26 @@ def select_env(self, env):
 
 @given('看见{page}|{element}')
 def find_element(self, page, element):
+    time.sleep(3)
     finElement(self.driver, page, element)
+
 
 @then('只点击{page}')
 def click_page_without_element(self, page):
+    time.sleep(3)
     clickElement(self.driver, page)
+
 
 @then('点击{page}|{element}')
 def click_page(self, page, element):
+    time.sleep(3)
     clickElement(self.driver, page, element)
 
 
-@when('在{page}|{element}处键入{keys}')
+@when('在{page}|{element}键入{keys}')
 def send_keys(self, page, element, keys):
-    el = finElement(self, page, element)
+    time.sleep(3)
+    el = finElement(self.driver, page, element)
     if el is not None:
         el.clear()
         el.send_keys(keys)
@@ -108,8 +116,10 @@ def send_keys(self, page, element, keys):
 
 @given('检查到{page}|{element}相关信息')
 def valid_text(self, page, element=None):
+    time.sleep(3)
     res = finElement(self.driver, page, element)
     assert res.text is not None, '未获取到元素信息：' + param
+
 
 
 @then('标记{info}')
@@ -118,7 +128,19 @@ def sign_log(self, info):
     print('标记' + info)
 
 
-import time
 @then('sleep{mn}秒')
 def sleep_m(self, mn=2):
     time.sleep(int(mn))
+
+
+@when('返回上一级')
+def sleep_m(self):
+    time.sleep(5)
+    clickElement(self.driver, '返回上一级')
+
+
+@when('返回上2级')
+def sleep_m(self):
+    time.sleep(3)
+    clickElement(self.driver, '返回上一级')
+    clickElement(self.driver, '返回上一级')

@@ -84,19 +84,19 @@ def waitElement(driver, e_type, param):
     :return:
     """
     if e_type == 'id':
-        return WebDriverWait(driver, 15, 1).until(lambda x: driver.find_element_by_id(param))
+        return WebDriverWait(driver, 20, 1).until(lambda x: driver.find_element_by_id(param))
     elif e_type == 'name':
-        return WebDriverWait(driver, 15, 1).until(lambda x: driver.find_element_by_name(param))
+        return WebDriverWait(driver, 20, 1).until(lambda x: driver.find_element_by_name(param))
     elif e_type == 'className':
-        return WebDriverWait(driver, 15, 1).until(lambda x: driver.find_element_by_class_name(param))
+        return WebDriverWait(driver, 20, 1).until(lambda x: driver.find_element_by_class_name(param))
     elif e_type == 'linkText':
-        return WebDriverWait(driver, 15, 1).until(lambda x: driver.find_element_by_link_text(param))
+        return WebDriverWait(driver, 20, 1).until(lambda x: driver.find_element_by_link_text(param))
     elif e_type == 'xpath':
-        return WebDriverWait(driver, 15, 1).until(lambda x: driver.find_element_by_xpath(param))
+        return WebDriverWait(driver, 20, 1).until(lambda x: driver.find_element_by_xpath(param))
     elif e_type == 'ios_predicate':
-        return WebDriverWait(driver, 15, 1).until(lambda x: driver.find_element_by_ios_predicate(param))
+        return WebDriverWait(driver, 20, 1).until(lambda x: driver.find_element_by_ios_predicate(param))
     elif e_type == 'android_uiautomator':
-        return WebDriverWait(driver, 15, 1).until(lambda x: driver.find_element_by_android_uiautomator('new UiSelector().text("'+ param +'")'))
+        return WebDriverWait(driver, 20, 1).until(lambda x: driver.find_element_by_android_uiautomator('new UiSelector().text("'+ param +'")'))
 
 
 

@@ -11,19 +11,58 @@
   类型: android_uiautomator
   参数: 刷新
   小屋自营精选:
-    类型: xpath
-    参数: //android.view.View[@resource-id="cn.carhouse.yctone:id/refresh_layout"]/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.support.v4.view.ViewPager/android.widget.FrameLayout/android.widget.ImageView
+    类型: id
+    参数: cn.carhouse.yctone:id/m_banner_view
+返回上一级:
+  类型: id
+  参数: cn.carhouse.yctone:id/iv_bar_left
 小屋自营精选:
   澳德巴克斯:
     类型: id
     参数: cn.carhouse.yctone:id/part_image
-澳德巴克斯:
+商品:
+  数量:
+    类型: id
+    参数: cn.carhouse.yctone:id/id_ed_num
   立即购买:
     类型: xpath
     参数: //android.support.v7.widget.RecyclerView[@resource-id="cn.carhouse.yctone:id/recycler_view"]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.Button
-添加商品:
-  类型: id
-  参数: cn.carhouse.yctone:id/id_ckb_add
+  添加商品:
+    类型: id
+    参数: cn.carhouse.yctone:id/id_ckb_add
+  加入进货单:
+    类型: id
+    参数: cn.carhouse.yctone:id/id_btn_shop_add
+  去结算:
+    类型: id
+    参数: cn.carhouse.yctone:id/id_btn_shop_pay
+  关闭弹窗:
+    类型: id
+    参数: cn.carhouse.yctone:id/pop_iv_delete
+订单:
+  立即购买:
+    类型: id
+    参数: cn.carhouse.yctone:id/id_btn_shop_pay
+  放弃付款:
+    类型: id
+    参数: cn.carhouse.yctone:id/dialog_cancel
+支付:
+  返回上一级:
+    类型: id
+    参数: cn.carhouse.yctone:id/m_bar_iv_left
+进货单:
+  类型: android_uiautomator
+  参数: 进货单
+  全选:
+    类型: id
+    参数: cn.carhouse.yctone:id/ckb_all
+  总计:
+    类型: id
+    参数: cn.carhouse.yctone:id/tv_shop_total_1
+  结算:
+    类型: id
+    参数: cn.carhouse.yctone:id/tv_shop_commit
+
 我:
   类型: android_uiautomator
   参数: 我

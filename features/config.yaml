@@ -5,7 +5,7 @@ platformName: Android
 platformVersion: 5.1.1
 deviceName: 127.0.0.1:62001
 appPackage: cn.carhouse.yctone
-appActivity: .activity.welcome.GuideActivity
+appActivity: .activity.welcome.SplashActivity
 noReset: False
 uname: 18229365263
 pwd: 123456
