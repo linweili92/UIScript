@@ -46,6 +46,23 @@
   放弃付款:
     类型: id
     参数: cn.carhouse.yctone:id/dialog_cancel
+商品订单:
+  查看详情:
+    类型: xpath
+    参数: //android.support.v7.widget.RecyclerView[@resource-id="cn.carhouse.yctone:id/recycler_view"]/android.widget.LinearLayout[2]/android.widget.LinearLayout
+  取消订单:
+    类型: xpath
+    参数: //android.widget.LinearLayout[@resource-id="cn.carhouse.yctone:id/id_orderimageview_statuview"]/android.widget.ImageButton[1]
+  删除订单:
+    类型: xpath
+    参数: //android.widget.LinearLayout[@resource-id="cn.carhouse.yctone:id/id_orderimageview_statuview"]/android.widget.ImageButton[1]
+  确认取消订单:
+    类型: id
+    参数: cn.carhouse.yctone:id/dialog_commit
+  确认删除订单:
+    类型: id
+    参数: cn.carhouse.yctone:id/dialog_commit
+
 支付:
   返回上一级:
     类型: id

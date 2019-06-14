@@ -11,7 +11,8 @@ def get_detail_yaml(page, element=None):
     if element is not None:
         if page == '环境':
             return y1[page]
-        return y1[page][element]
+        else:
+            return y1[page][element]
     else:
         return y1[page]
 
