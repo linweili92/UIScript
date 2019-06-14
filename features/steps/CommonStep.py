@@ -21,8 +21,6 @@ def start_app(self):
     swipLeft(self.driver, n=3)
     loginfo('点击 【开始体验】')
     clickElement(self.driver, '开始体验')
-    loginfo('点击 【以后再说】')
-    clickElement(self.driver, '以后再说')
 
 
 @then('重新启动APP')

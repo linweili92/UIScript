@@ -94,6 +94,46 @@ def finElement(driver, page, element=None):
     return ele
 
 
+def accepAlert(driver, page, element=None):
+    et = get_detail_yaml(page, element)
+    el = getElement(driver, et['类型'], et['参数'])
+    if el is not None:
+        el.click()
+
+
+def getElement(driver, e_type, param):
+    """
+    查找元素
+    :param driver:
+    :param e_type:
+    :param param:
+    :return element
+    """
+    i = 0
+    element = None
+    while i < 3:
+        try:
+            if e_type == 'id':
+                element = driver.find_element_by_id(param)
+            elif e_type == 'name':
+                element = driver.find_element_by_name(param)
+            elif e_type == 'className':
+                element = driver.find_element_by_class_name(param)
+            elif e_type == 'linkText':
+                element = driver.find_element_by_link_text(param)
+            elif e_type == 'xpath':
+                element = driver.find_element_by_xpath(param)
+            elif e_type == 'ios_predicate':
+                element = driver.find_element_by_ios_predicate(param)
+            elif e_type == 'android_uiautomator':
+                element = driver.find_element_by_android_uiautomator('new UiSelector().text("'+ param +'")')
+            break
+        except:
+            i = i + 1
+            time.sleep(1)
+    return element
+
+
 def waitElement(driver, e_type, param):
     """
     等待元素出现
@@ -105,6 +145,7 @@ def waitElement(driver, e_type, param):
     i = 0
     element = None
     while i < 3:
+        accepAlert(driver, '以后再说')
         loginfo('开始查找元素: 【' + e_type + '|' + param + '】')
         try:
             if e_type == 'id':
@@ -123,7 +164,7 @@ def waitElement(driver, e_type, param):
                 element = WebDriverWait(driver, 20, 1).until(lambda x: driver.find_element_by_android_uiautomator('new UiSelector().text("'+ param +'")'))
             break
         except:
-            logerror('查找元素超时: 【' + e_type + '|' + param + '】 ' + str(i) + '次')
+            logerror('查找元素超时: 【' + e_type + '|' + param + '】 ' + str(i+1) + '次')
             i = i + 1
             time.sleep(1)
     return element
