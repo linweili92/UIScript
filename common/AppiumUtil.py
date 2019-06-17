@@ -63,11 +63,11 @@ def clickElement(driver, page, element=None):
     """
     et = finElement(driver, page, element)
     if et is not None:
-        loginfo('点击元素')
+        # loginfo('点击元素')
         et.click()
     else:
         # loginfo('检查是否存在弹窗')
-        logerror('未找到元素')
+        logerror('未找到元素 {}'.format(et))
 
 
 def finElement(driver, page, element=None):
@@ -79,11 +79,11 @@ def finElement(driver, page, element=None):
     :return:
     """
     et = get_detail_yaml(page, element)
-    loginfo('获取到信息: ')
-    loginfo('类型: ' + et['类型'])
-    loginfo('类型: ' + et['参数'])
+    # loginfo('获取到信息: ')
+    # loginfo('类型: ' + et['类型'])
+    # loginfo('类型: ' + et['参数'])
     if page == '环境':
-        loginfo('获取到环境类型: ' + et['类型'] + ',保留参数：' + element)
+        # loginfo('获取到环境类型: ' + et['类型'] + ',保留参数：' + element)
         ele = waitElement(driver, et['类型'], element)
     else:
         ele = waitElement(driver, et['类型'], et['参数'])

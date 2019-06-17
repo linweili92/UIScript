@@ -62,7 +62,9 @@
   确认删除订单:
     类型: id
     参数: cn.carhouse.yctone:id/dialog_commit
-
+  待付款:
+    类型: linkText
+    参数: 待付款
 支付:
   返回上一级:
     类型: id
@@ -79,10 +81,64 @@
   结算:
     类型: id
     参数: cn.carhouse.yctone:id/tv_shop_commit
-
+我的收藏:
+  商品:
+    类型: linkText
+    参数: 商品
+  店铺:
+    类型: linkText
+    参数: 店铺
+浏览记录:
+  记录:
+    类型: xpath
+    参数: //android.support.v7.widget.RecyclerView[@resource-id="cn.carhouse.yctone:id/recycler_view"]/android.widget.LinearLayout[1]
+常购清单:
+  常用:
+    类型: linkText
+    参数: 常用
+我的账户:
+  昵称:
+    类型: android_uiautomator
+    参数: 昵称
+签到:
+  可用积分:
+    类型: id
+    参数: cn.carhouse.yctone:id/integral_mall_des_title
+我的财富:
+  总资产:
+    类型: linkText
+    参数: 总资产(元)
+  安全密码:
+    类型: id
+    参数: cn.carhouse.yctone:id/pet
+  总余额:
+    类型: id
+    参数: cn.carhouse.yctone:id/id_mywealth_item_1_total
+  优惠券:
+    类型: linkText
+    参数: 优惠券
+  日收入:
+    类型: linkText
+    参数: 日收入(元)
+  待结算收入:
+    类型: linkText
+    参数: 待结算收入
+优惠券:
+  兑换码输入框:
+    类型: id
+    参数: cn.carhouse.yctone:id/ed_juan
 我:
   类型: android_uiautomator
   参数: 我
+  签到:
+    类型: id
+    参数: cn.carhouse.yctone:id/iv_sign_in
+  常购清单:
+    类型: linkText
+    参数: 常购清单
+  浏览记录:
+    类型: linkText
+    参数: 浏览记录
   设置:
     类型: id
     参数: cn.carhouse.yctone:id/iv_set
@@ -92,6 +148,9 @@
   用户名:
     类型: id
     参数: cn.carhouse.yctone:id/tv_user_name
+  收藏商品:
+    类型: linkText
+    参数: 收藏商品
   我的评价:
     类型: xpath
     参数: //android.support.v7.widget.RecyclerView[@resource-id="cn.carhouse.yctone:id/recycler_view_five"]/android.widget.LinearLayout[10]/android.widget.ImageView

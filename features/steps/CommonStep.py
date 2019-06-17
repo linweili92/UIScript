@@ -97,14 +97,28 @@ def select_env(self, env):
 
 @given('看见{page}|{element}')
 def find_element(self, page, element):
-    loginfo('看见 【 ' + page + '|' + element +'】')
-    finElement(self.driver, page, element)
+    loginfo('看见 【 ' + page + '|' + element + '】')
+    el = finElement(self.driver, page, element)
+    assert el is not None, '没有看到元素: ' + element
+
+
+@when('看见{page}|{element}')
+def find_element(self, page, element):
+    loginfo('看见 【 ' + page + '|' + element + '】')
+    el = finElement(self.driver, page, element)
+    assert el is not None, '没有看到元素: ' + element
 
 
 @then('只点击{page}')
 def click_page_without_element(self, page):
-    loginfo('只点击 【 '+ page + '】')
+    loginfo('只点击 【 ' + page + '】')
     clickElement(self.driver, page)
+
+
+@given('点击{page}|{element}')
+def click_page(self, page, element):
+    loginfo('点击 【 ' + page + '|' + element + '】')
+    clickElement(self.driver, page, element)
 
 
 @then('点击{page}|{element}')
@@ -143,7 +157,7 @@ def sign_log(self, info):
     print('标记' + info)
 
 
-@then('sleep{mn}秒')
+@then('等待{mn}秒')
 def sleep_m(self, mn=2):
     time.sleep(int(mn))
 
@@ -152,3 +166,10 @@ def sleep_m(self, mn=2):
 def sleep_m(self):
     loginfo('返回上一级')
     clickElement(self.driver, '返回上一级')
+
+
+@then('返回上一级')
+def sleep_m(self):
+    loginfo('返回上一级')
+    clickElement(self.driver, '返回上一级')
+
