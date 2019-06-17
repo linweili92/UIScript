@@ -135,15 +135,28 @@ def click_page(self, page, element):
 
 @when('在{page}|{element}键入{keys}')
 def send_keys(self, page, element, keys):
-    # loginfo('在 【' + page + '|' + element + '】 输入 : ' + keys)
-    loginfo('在【{}|{}】 输入 {}'.format(page, element, keys))
     el = finElement(self.driver, page, element)
     if el is not None:
         el.clear()
         el.send_keys(keys)
+        loginfo('在【{}|{}】 输入 {}'.format(page, element, keys))
 
 
-@given('检查到{page}|{element}相关信息')
+@when('输入安全密码')
+def secret_keys(self):
+    for i1 in [1, 2]:
+        for i2 in [1, 2, 3]:
+            self.driver.find_element_by_xpath(
+                '//android.widget.LinearLayout[@resource-id="cn.carhouse.yctone:id/ckb"]/android.widget.LinearLayout/android.widget.LinearLayout[{}]/android.widget.TextView[{}]'.format(i1,i2)).click()
+#     self.driver.find_element_by_xpath('//android.widget.LinearLayout[@resource-id="cn.carhouse.yctone:id/ckb"]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[1]').click()
+#     self.driver.find_element_by_xpath('//android.widget.LinearLayout[@resource-id="cn.carhouse.yctone:id/ckb"]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[2]').click()
+#     self.driver.find_element_by_xpath('//android.widget.LinearLayout[@resource-id="cn.carhouse.yctone:id/ckb"]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[3]').click()
+#     self.driver.find_element_by_xpath('//android.widget.LinearLayout[@resource-id="cn.carhouse.yctone:id/ckb"]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[1]').click()
+#     self.driver.find_element_by_xpath('//android.widget.LinearLayout[@resource-id="cn.carhouse.yctone:id/ckb"]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[2]').click()
+#     self.driver.find_element_by_xpath('//android.widget.LinearLayout[@resource-id="cn.carhouse.yctone:id/ckb"]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[3]').click()
+#
+#
+# @given('检查到{page}|{element}相关信息')
 def valid_text(self, page, element=None):
     loginfo('检查到【{}|{}】相关信息'.format(page, element))
     res = finElement(self.driver, page, element)
@@ -172,4 +185,16 @@ def sleep_m(self):
 def sleep_m(self):
     loginfo('返回上一级')
     clickElement(self.driver, '返回上一级')
+
+
+@then('返回上级')
+def sleep_m(self):
+    loginfo('返回上级')
+    clickElement(self.driver, '返回上级')
+
+
+@then('返回财富上一级')
+def sleep_m(self):
+    loginfo('返回财富上一级')
+    clickElement(self.driver, '返回财富上一级')
 
