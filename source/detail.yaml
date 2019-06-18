@@ -71,6 +71,26 @@
   待付款:
     类型: android_uiautomator
     参数: 待付款
+我的订单:
+  全部订单:
+    类型: android_uiautomator
+    参数: 全部订单
+  待付款:
+    类型: xpath
+    参数: //android.support.v7.widget.RecyclerView[@resource-id="cn.carhouse.yctone:id/recycler_view_four"]/android.widget.FrameLayout[1]/android.widget.ImageView
+  待发货:
+    类型: xpath
+    参数: //android.support.v7.widget.RecyclerView[@resource-id="cn.carhouse.yctone:id/recycler_view_four"]/android.widget.FrameLayout[2]/android.widget.ImageView
+  待收货:
+    类型: xpath
+    参数: //android.support.v7.widget.RecyclerView[@resource-id="cn.carhouse.yctone:id/recycler_view_four"]/android.widget.FrameLayout[3]/android.widget.ImageView
+  待评价:
+    类型: xpath
+    参数: //android.support.v7.widget.RecyclerView[@resource-id="cn.carhouse.yctone:id/recycler_view_four"]/android.widget.FrameLayout[4]/android.widget.ImageView
+  换修/退款:
+      类型: xpath
+      参数: //android.support.v7.widget.RecyclerView[@resource-id="cn.carhouse.yctone:id/recycler_view_four"]/android.widget.FrameLayout[5]/android.widget.ImageView
+
 支付:
   返回上一级:
     类型: id
